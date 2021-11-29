@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ViewController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in h %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.address}}</td>
+      <td><a href="../index.php/delete?id={{i.id}}" class= "btn btn-danger delete-record" name="delete">Delete</a></td>
+      <td><a href="../index.php/edit?id={{i.id}}" class= "btn btn-primary delete-record" name="edit">Edit</a></td>
+
+    </tr>
+    {% endfor%}
+  </tbody>
+</table>
+</div>
+{% endblock %}
